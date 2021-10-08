@@ -5,9 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
     <title>Netflix</title>
 </head>
 <body>
-    
+    <header id="header">
+        <div id="logo-menu">
+            <a href="https://fontmeme.com/netflix-font/"><img src="https://fontmeme.com/permalink/211008/3d09959a0f1152860ce94decf68c586f.png" alt="netflix-font" border="0"></a>
+            <ul id="menu-ul">
+                <li class="lista-menu"><a href="/">Início</a></li>
+                <li class="lista-menu"><a href="/">Séries</a></li>
+                <li class="lista-menu"><a href="/">Filmes</a></li>
+                <li class="lista-menu"><a href="/">Bombando</a></li>
+                <li class="lista-menu"><a href="/">Minha lista</a></li>
+            </ul>
+        </div>
+        <div id="header-aside">
+            <div id="pesquisa">
+                <input type="search" name="busca" id="input-busca">
+                <img width="20px" src="./images/search-solid.svg" alt="pesquisar">
+            </div>
+            <a id="kids" href="/">Infantil</a>
+            <div id="notifications"><img width="20px" src="./images/bell-solid.svg" alt="notification"></div>
+            <nav id="nav">
+                <button id="btn"><img width="20px" src="./images/square-solid.svg" alt="menu"></button>
+                <ul id="perfis">
+                    <li class="perfis">Perfil 1</li>
+                    <li class="perfis">Perfil 2</li>
+                    <li class="perfis">Perfil 3</li>
+                    <li class="perfis">Infantil</li>
+                    <li class="config-perfil">Gerenciar perfis</li>
+                </ul>
+                <ul id="config-conta">
+                    <li class="config-lista">Conta</li>
+                    <li class="config-lista">Centro de ajuda</li>
+                    <li class="config-lista">Sair da Netflix</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<script src="./app/script.js"></script>
 </body>
 </html>

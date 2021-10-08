@@ -1,1 +1,114 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@font-face {
+  font-family: Netflix;
+  src: url(./fonts/GothamLight.ttf);
+  src: url(./fonts/GothamMedium.ttf);
+  src: url(./fonts/Gotham-Light.otf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: Netflix, sans-serif;
+  text-decoration: none;
+}
+
+#header {
+  width: 95%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#logo-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#logo-menu a {
+  padding: 0.3rem;
+}
+
+#menu-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lista-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 1rem;
+}
+
+.lista-menu a {
+  font-size: 0.7rem;
+  color: #000;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.lista-menu a:hover {
+  color: #4d4d4d;
+}
+
+#header-aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header-aside #pesquisa, #header-aside #kids, #header-aside #notifications, #header-aside #nav {
+  padding-left: 1rem;
+}
+
+#pesquisa {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#nav ul {
+  display: none;
+}
+
+#nav.active ul {
+  display: block;
+}
+/*# sourceMappingURL=main.css.map */
