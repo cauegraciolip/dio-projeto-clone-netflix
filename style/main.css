@@ -19,6 +19,15 @@
   text-decoration: none;
 }
 
+body {
+  background-color: #0c0e0b;
+}
+
+#video-header {
+  position: absolute;
+  z-index: -1;
+}
+
 #header {
   width: 95%;
   margin: auto;
@@ -53,6 +62,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 0.3rem;
 }
 
 .lista-menu {
@@ -62,18 +72,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-left: 1rem;
+  padding: 0rem 0.5rem;
 }
 
 .lista-menu a {
   font-size: 0.7rem;
-  color: #000;
+  color: #e2e2e2;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
 .lista-menu a:hover {
-  color: #4d4d4d;
+  color: white;
 }
 
 #header-aside {
@@ -86,7 +96,28 @@
 }
 
 #header-aside #pesquisa, #header-aside #kids, #header-aside #notifications, #header-aside #nav {
-  padding-left: 1rem;
+  padding: 0rem 0.5rem;
+}
+
+#header-aside #pesquisa input, #header-aside #kids input, #header-aside #notifications input, #header-aside #nav input {
+  color: #e2e2e2;
+}
+
+#header-aside #pesquisa img, #header-aside #kids img, #header-aside #notifications img, #header-aside #nav img {
+  -webkit-filter: invert(99%) sepia(0%) saturate(3498%) hue-rotate(166deg) brightness(113%) contrast(77%);
+          filter: invert(99%) sepia(0%) saturate(3498%) hue-rotate(166deg) brightness(113%) contrast(77%);
+  background: none;
+}
+
+#header-aside #kids {
+  font-size: 0.7rem;
+  color: #e2e2e2;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+#header-aside #kids:hover {
+  color: white;
 }
 
 #pesquisa {
@@ -102,13 +133,65 @@
   background: none;
   border: none;
   cursor: pointer;
+  position: relative;
 }
 
-#nav ul {
-  display: none;
+#nav-menu {
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(12, 14, 11, 0.1);
 }
 
-#nav.active ul {
-  display: block;
+#nav.activeMenu #nav-menu {
+  opacity: 1;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  padding: 0.6rem;
+  padding-right: 2rem;
+  margin-top: 0.5rem;
+  border: 1px solid #fcfcfc;
+  background-color: rgba(12, 14, 11, 0.1);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#nav.activeMenu #nav-menu .perfis, #nav.activeMenu #nav-menu .config-lista {
+  font-size: 0.7rem;
+  color: #e2e2e2;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0rem;
+  background-color: rgba(12, 14, 11, 0.1);
+}
+
+#nav.activeMenu #nav-menu .perfis:hover, #nav.activeMenu #nav-menu .config-lista:hover {
+  cursor: pointer;
+  color: #636363;
+}
+
+#pesquisa input {
+  opacity: 0;
+}
+
+#pesquisa.pesquisaActive input {
+  opacity: 1;
+  font-size: 0.7rem;
+  position: absolute;
+  right: 10rem;
+  padding: 0.4rem;
+  padding-left: 2.5rem;
+  outline: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: none;
+  border: 1px solid #e2e2e2;
+}
+
+#pesquisa.pesquisaActive img {
+  position: relative;
+  right: 11rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 /*# sourceMappingURL=main.css.map */

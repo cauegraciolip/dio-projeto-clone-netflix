@@ -1,8 +1,15 @@
-const btn = document.getElementById('btn')
+const search = document.getElementById('lupa')
+const nav = document.getElementById('nav')
 
-function showMenu() {
-    const nav = document.getElementById('nav')
-   nav.classList.toggle('active')
+
+function showInput() {
+    const pesquisa = document.getElementById('pesquisa')
+    pesquisa.classList.toggle('pesquisaActive')
 }
 
-btn.addEventListener('click', showMenu)
+function showMenu() {
+    nav.classList.toggle('activeMenu') 
+}
+
+
+search.addEventListener('click', showInput)
