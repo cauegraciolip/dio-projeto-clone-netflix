@@ -7,6 +7,11 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: Benguiant;
+  src: url(./fonts/benguib.ttf);
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -23,14 +28,109 @@ body {
   background-color: #0c0e0b;
 }
 
-#video-header {
+#bg-header {
   position: absolute;
   z-index: -1;
 }
 
+#bg-header img {
+  position: absolute;
+  width: 98.8vw;
+  height: 115vh;
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(3%, transparent), to(black));
+  -webkit-mask-image: linear-gradient(to top, transparent 3%, black 100%);
+          mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(3%, transparent), to(black));
+          mask-image: linear-gradient(to top, transparent 3%, black 100%);
+}
+
+#bg-header h2 {
+  font-family: Benguiant;
+  font-size: 3rem;
+  position: relative;
+  top: 50vh;
+  padding-left: 2rem;
+  color: #e2e2e2;
+}
+
+#bg-header #button-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#bg-header #button-info button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  top: 55vh;
+  font-size: 0.8rem;
+  font-weight: 700;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#bg-header #button-info button:first-child {
+  background-color: #e2e2e2;
+  margin-left: 2rem;
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+#bg-header #button-info button:first-child:hover {
+  cursor: pointer;
+}
+
+#bg-header #button-info button:first-child i {
+  padding: 0rem 0.7rem;
+}
+
+#bg-header #button-info button:first-child:hover {
+  background-color: #c9c9c9;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#bg-header #button-info button:last-child {
+  background-color: #e2e2e2;
+  margin-left: 2rem;
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-left: 1rem;
+  background-color: rgba(94, 94, 92, 0.55);
+  color: #e2e2e2;
+}
+
+#bg-header #button-info button:last-child:hover {
+  cursor: pointer;
+}
+
+#bg-header #button-info button:last-child i {
+  padding: 0rem 0.7rem;
+}
+
+#bg-header #button-info button:last-child:hover {
+  background-color: rgba(68, 68, 67, 0.55);
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
 #header {
   width: 95%;
-  margin: auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,7 +172,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0rem 0.5rem;
+  padding: 0rem 0.8rem;
 }
 
 .lista-menu a {
@@ -96,11 +196,12 @@ body {
 }
 
 #header-aside #pesquisa, #header-aside #kids, #header-aside #notifications, #header-aside #nav {
-  padding: 0rem 0.5rem;
+  padding: 0rem 0.8rem;
 }
 
 #header-aside #pesquisa input, #header-aside #kids input, #header-aside #notifications input, #header-aside #nav input {
   color: #e2e2e2;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 #header-aside #pesquisa img, #header-aside #kids img, #header-aside #notifications img, #header-aside #nav img {
@@ -139,19 +240,18 @@ body {
 #nav-menu {
   opacity: 0;
   position: absolute;
-  background-color: rgba(12, 14, 11, 0.1);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 #nav.activeMenu #nav-menu {
   opacity: 1;
   position: absolute;
   top: 2rem;
-  right: 2rem;
+  right: 0.85rem;
   padding: 0.6rem;
   padding-right: 2rem;
   margin-top: 0.5rem;
   border: 1px solid #fcfcfc;
-  background-color: rgba(12, 14, 11, 0.1);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -162,7 +262,6 @@ body {
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
   padding: 0.5rem 0rem;
-  background-color: rgba(12, 14, 11, 0.1);
 }
 
 #nav.activeMenu #nav-menu .perfis:hover, #nav.activeMenu #nav-menu .config-lista:hover {
@@ -170,15 +269,32 @@ body {
   color: #636363;
 }
 
+#pesquisa {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 #pesquisa input {
   opacity: 0;
+}
+
+#pesquisa.pesquisaActive {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 #pesquisa.pesquisaActive input {
   opacity: 1;
   font-size: 0.7rem;
-  position: absolute;
-  right: 10rem;
   padding: 0.4rem;
   padding-left: 2.5rem;
   outline: none;
@@ -189,8 +305,8 @@ body {
 }
 
 #pesquisa.pesquisaActive img {
-  position: relative;
-  right: 11rem;
+  position: absolute;
+  margin-left: 10px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }

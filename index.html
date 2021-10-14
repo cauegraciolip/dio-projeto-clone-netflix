@@ -8,11 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <title>Netflix</title>
 </head>
 <body>
-    <div id="video-header">
-        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80">
+    <div id="bg-header">
+        <img src="images/wallpaper-home-netflix.jpg" alt="">
+        <h2 id="title-serie">STRANGER THINGS</h2>
+        <div id="button-info">
+            <button><i class="fas fa-play fa-sm"></i>Assistir</button>
+            <button><i class="fas fa-info-circle"></i>Mais informações</button>
+        </div>
     </div>
     <header id="header">
         <div id="logo-menu">
@@ -27,8 +33,9 @@
         </div>
         <div id="header-aside">
             <div id="pesquisa">
-                <input type="search" name="busca" id="input-busca" placeholder="Títulos,gente e genêros">
                 <img width="20px" src="./images/search-solid.svg" alt="pesquisar" id="lupa">
+
+                <input type="search" name="busca" id="input-busca" placeholder="Títulos,gente e genêros">
             </div>
             
             <a id="kids" href="/">Infantil</a>
