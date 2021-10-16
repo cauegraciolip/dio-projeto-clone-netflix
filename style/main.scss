@@ -1,7 +1,7 @@
 $patter-red: #e50914;
 $dark-red: #B20710;
 $gray-button: rgba(94, 94, 92, 0.550);
-$bg-color: #0c0e0b;
+$bg-color: #181818;
 $bg-menu-aside: rgba(0, 0, 0, 0.6);
 $text-color: #e2e2e2;
 $white: #ffffff;
@@ -9,10 +9,14 @@ $white: #ffffff;
 @font-face {
     font-family: Netflix;
     src: url(./fonts/GothamLight.ttf);
-    src: url(./fonts/GothamMedium.ttf);
     src: url(./fonts/Gotham-Light.otf);
     font-weight: 400;
     font-style: normal;
+}
+
+@font-face {
+    font-family: NetflixMedium;
+    src: url(./fonts/GothamMedium.ttf);
 }
 
 @font-face {
@@ -35,13 +39,16 @@ body {
     background-color: $bg-color;
 }
 
+/* ===== MIXINS ===== */
+
 @mixin flex {
     display: flex;
     align-items: center;
 }
 
 @mixin space {
-    padding: 0rem 0.8rem;
+    padding: 0rem 0.2rem;
+    padding-right: 0.7rem;
 }
 
 @mixin config-button {
@@ -62,70 +69,7 @@ body {
         }
 }
 
-#bg-header {
-    position: absolute;
-    z-index: -1;
-
-        img {
-            position: absolute;
-            width: 98.8vw;
-            height: 115vh;
-            mask-image: linear-gradient(to top, transparent 3%, black 100%);
-        }
-
-        h2 {
-            font-family: Benguiant;
-            font-size: 3rem;
-            position: relative;
-            top: 50vh;
-            padding-left: 2rem;
-            color: $text-color;
-        }
-
-        #button-info {
-            display: flex;
-
-            button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                position: relative;
-                top: 55vh;
-    
-                font-size: 0.8rem;
-                font-weight: 700;
-                
-                transition: background-color 0.2s ease-in-out;
-
-    
-                &:first-child {
-                    @include config-button();
-                    &:hover {
-                        background-color: darken($text-color, 10);
-                        transition: background-color 0.2s ease-in-out;
-                     }
-
-                }
-    
-                &:last-child {
-                    @include config-button();
-                    margin-left: 1rem;
-                    background-color: $gray-button;
-                    color: $text-color;
-                     &:hover {
-                        background-color: darken($gray-button, 10);
-                        transition: background-color 0.2s ease-in-out;
-
-
-                     }
-
-                }
-            }
-        }
-
-        
-}
+/* ====== TOP PAGE, LOGO, LINKS, CONFIGS AND PROFILES ====== */
 
 #header {
     width: 95%;
@@ -282,3 +226,229 @@ body {
         transition: all 0.3s ease;
     }
 }
+
+
+/* ===== BACKGROUND, TITLE AND BUTTONS ===== */
+
+#bg-header {
+    position: absolute;
+    z-index: -1;
+
+        img {
+            position: absolute;
+            width: 98.8vw;
+            height: 115vh;
+            mask-image: linear-gradient(to top, transparent 3%, black 100%);
+        }
+
+        h2 {
+            font-family: Benguiant;
+            font-size: 3rem;
+            position: relative;
+            top: 45vh;
+            padding-left: 2rem;
+            color: $text-color;
+        }
+
+        #button-info {
+            display: flex;
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                position: relative;
+                top: 50vh;
+    
+                font-size: 0.85rem;
+                font-family: NetflixMedium;
+                
+                transition: background-color 0.2s ease-in-out;
+    
+                &:first-child {
+                    @include config-button();
+                    a {
+                        text-decoration: none;
+                        color: $bg-color;
+                        font-size: 0.85rem;
+                        font-family: NetflixMedium;
+                    }
+                    &:hover {
+                        background-color: darken($text-color, 10);
+                        transition: background-color 0.2s ease-in-out;
+                     }
+
+                }
+    
+                &:last-child {
+                    @include config-button();
+                    margin-left: 1rem;
+                    background-color: $gray-button;
+                    color: $text-color;
+                     &:hover {
+                        background-color: darken($gray-button, 10);
+                        transition: background-color 0.2s ease-in-out;
+
+
+                     }
+
+                }
+            }
+        }
+
+        
+}
+
+.description {
+    max-width: 650px;
+
+    color: $text-color;
+
+    position: relative;
+    top: 46vh;
+    font-size: 1rem;
+
+    padding: 0.5rem 2rem;
+
+}
+
+/* ===== MODAL INFO SERIE ===== */
+
+#info-serie {
+    display: block;
+    width: 700px;
+    background-color: $bg-color;
+
+    margin: auto;
+    
+    position: relative;
+    top: 1rem;
+
+    border-radius: 5px;
+    z-index: 3;
+
+    h2 {
+        font-family: Benguiant;
+        font-size: 2rem;
+        position: absolute;
+        top: 30vh;
+        padding-left: 1rem;
+        color: $text-color;
+    }
+
+    button {
+        @include config-button();
+
+        position: absolute;
+        top: 36vh;
+        left: -1.5vw;
+
+        padding: 0.45rem 1.5rem 0.5rem 0.7rem;
+
+        a {
+            text-decoration: none;
+            color: $bg-color;
+            font-size: 0.85rem;
+            font-family: NetflixMedium;
+        }
+    }
+
+    .info {
+        background-color: $bg-color;
+        color: $text-color;
+
+        font-size: 0.8rem;
+
+        border-radius: 5px;
+
+        padding-left: 1rem;
+        padding-bottom: 0.8rem;
+
+    }
+
+    .info-700 {
+        font-family: NetflixMedium;
+    }
+
+    img {
+        mask-image: linear-gradient(to top, transparent 3%, black 100%);
+        width: 100%;
+
+        border-radius: 5px;
+
+    }
+    
+}
+
+.relevante-indicativa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    color: $text-color;
+    padding-left: 1rem;
+
+    p {
+        font-size: 0.8rem;
+        padding-right: 0.8rem;
+    }
+
+
+    span {
+        margin-right: 0.8rem;
+    }
+}
+
+.indicativa {
+    color: $text-color;
+    background-color: $patter-red;
+    padding: 0.3rem 0.3rem;
+    border-radius: 0.1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.hd {
+    color: $text-color;
+    border: 1px solid $text-color;
+    border-radius: 0.2rem;
+
+    font-size: 0.6rem;
+
+    padding: 0.1rem 0.25rem;
+}
+.green {
+    color: #3FB75D;
+    font-family: NetflixMedium;
+}
+
+#sobre-elenco {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 1.4rem;
+    padding-bottom: 1rem;
+}
+
+#sobre {
+   div {
+        display: block;
+        width: 300px;
+        padding: 0rem 0rem 0.5rem 1rem;
+
+        p, i {
+            font-size: 0.7rem;
+            display: inline;
+            padding: 0;
+            color: $text-color;
+        }
+
+        .title {
+            color: $gray-button;
+        }
+   }
+}
+
