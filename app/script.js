@@ -22,11 +22,11 @@ const moreInformationButton = document.getElementById('more-information')
 const infoSeries = document.getElementById('info-serie')
 
 function hiddeDescription() {
-    infoSeries.classList.toggle('description-display')
+    infoSeries.classList.remove('description-display')
 }
 
 function showDescription() {
-    infoSeries.classList.toggle('description-display')
+    infoSeries.classList.add('description-display')
 }
 
 

@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <title>Netflix</title>
 </head>
-<body>
+<body id="body">
 
     <header id="header">
         <div id="logo-menu">
@@ -27,24 +27,24 @@
         </div>
         <div id="header-aside">
             <div id="pesquisa">
-                <img width="20px" src="./images/search-solid.svg" alt="pesquisar" id="lupa">
+                <img width="20px" src="./images/search-solid.svg" alt="pesquisar" id="lupa" class="icon">
 
                 <input type="search" name="busca" id="input-busca" placeholder="Títulos,gente e genêros">
             </div>
             
             <a id="kids" href="/">Infantil</a>
 
-            <div id="notifications"><img width="20px" src="./images/bell-solid.svg" alt="notification"></div>
+            <div id="notifications"><img width="20px" src="./images/bell-solid.svg" alt="notification" class="icon"></div>
 
             <nav id="nav" onclick="showMenu()">
-                <button id="btn"><img width="30px" src="./images/square-solid.svg" alt="menu"></button>
+                <button id="btn"><img width="30px" src="./images/square-solid.svg" alt="menu" class="icon"></button>
                 <div id="nav-menu">
                     <ul id="perfis">
-                        <li class="perfis">Perfil 1</li>
-                        <li class="perfis">Perfil 2</li>
-                        <li class="perfis">Perfil 3</li>
-                        <li class="perfis">Infantil</li>
-                        <li class="config-perfil perfis">Gerenciar perfis</li>
+                        <li class="profile"><img src="./images/profile-picture-one.png" alt="profile-one"><p>Perfil 1</p></li>
+                        <li class="profile"><img src="./images/profile-picture-photo.png" alt="profile-four"> <p>Perfil 2</p></li>
+                        <li class="profile"><img src="./images/profile-picture-two.png" alt=""> <p>Perfil 3</p></li>
+                        <li class="manage-kids profile"><p class="config-profiles-p">Infantil</p></li>
+                        <li class="manage-kids profile"><p class="config-profiles-p">Gerenciar perfis</p></li>
                     </ul>
                     <hr>
                     <ul id="config-conta">

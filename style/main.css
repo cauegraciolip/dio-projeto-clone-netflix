@@ -140,7 +140,7 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-#header-aside #pesquisa img, #header-aside #kids img, #header-aside #notifications img, #header-aside #nav img {
+#header-aside #pesquisa .icon, #header-aside #kids .icon, #header-aside #notifications .icon, #header-aside #nav .icon {
   -webkit-filter: invert(99%) sepia(0%) saturate(3498%) hue-rotate(166deg) brightness(113%) contrast(77%);
           filter: invert(99%) sepia(0%) saturate(3498%) hue-rotate(166deg) brightness(113%) contrast(77%);
   background: none;
@@ -171,38 +171,6 @@ body {
   border: none;
   cursor: pointer;
   position: relative;
-}
-
-#nav-menu {
-  opacity: 0;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-#nav.activeMenu #nav-menu {
-  opacity: 1;
-  position: absolute;
-  top: 2rem;
-  right: 0.85rem;
-  padding: 0.6rem;
-  padding-right: 2rem;
-  margin-top: 0.5rem;
-  border: 1px solid #fcfcfc;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-#nav.activeMenu #nav-menu .perfis, #nav.activeMenu #nav-menu .config-lista {
-  font-size: 0.7rem;
-  color: #e2e2e2;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-  padding: 0.5rem 0rem;
-}
-
-#nav.activeMenu #nav-menu .perfis:hover, #nav.activeMenu #nav-menu .config-lista:hover {
-  cursor: pointer;
-  color: #636363;
 }
 
 #pesquisa {
@@ -245,6 +213,70 @@ body {
   margin-left: 10px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+#nav-menu {
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+#nav.activeMenu #nav-menu {
+  opacity: 1;
+  position: absolute;
+  top: 3rem;
+  right: 10%;
+  padding: 0.6rem;
+  padding-right: 2rem;
+  margin-top: 0.5rem;
+  border: 1px solid #fcfcfc;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile img {
+  -webkit-filter: none;
+          filter: none;
+  border-radius: 3px;
+}
+
+.profile p {
+  font-size: 0.7rem;
+  color: #e2e2e2;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0.5rem;
+}
+
+.profile p:hover {
+  cursor: pointer;
+  color: #636363;
+}
+
+.manage-kids p {
+  padding-left: 0;
+}
+
+.config-lista {
+  font-size: 0.7rem;
+  color: #e2e2e2;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0rem;
+}
+
+.config-lista:hover {
+  cursor: pointer;
+  color: #636363;
 }
 
 /* ===== BACKGROUND, TITLE AND BUTTONS ===== */
