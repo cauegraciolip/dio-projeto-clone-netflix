@@ -15,7 +15,7 @@
 
     <header id="header">
         <div id="logo-menu">
-            <a href="https://fontmeme.com/netflix-font/"><img src="https://fontmeme.com/permalink/211008/3d09959a0f1152860ce94decf68c586f.png" alt="netflix-font"></a>
+            <a><img src="https://fontmeme.com/permalink/211008/3d09959a0f1152860ce94decf68c586f.png" alt="netflix-font"></a>
             <ul id="menu-ul">
                 <li class="lista-menu"><a href="/">Início</a></li>
                 <li class="lista-menu"><a href="/">Séries</a></li>
@@ -57,45 +57,60 @@
     </header>
 
     <div id="bg-header">
-        <img src="images/wallpaper-home-netflix.jpg" alt="">
-        <h2>STRANGER THINGS</h2>
-        <h4 class="description">Assista a temporada 1 agora</h4>
-        <div id="button-info">
-            <button><i class="fas fa-play fa-sm"></i><a href="">Assistir</a></button>
-            <button><i class="fas fa-info-circle"></i>Mais informações</button>
+        <img src="images/wallpaper-home-netflix.jpg" alt="bg-image" class="bg-image">
+
+        <div class="name-info-btn">
+            <img class="logo-st" src="./images/strager-things-netflix-logo.png" alt="st-principal-logo" class="logo-series-principal">
+
+            <div id="button-info">
+                <button class="watch"><i class="fas fa-play fa-sm"></i><a href="https://www.netflix.com/watch/80077368?trackId=13752289" target="_blank" rel="next">Assistir</a></button>
+                <button id="more-information"><i class="fas fa-info-circle"></i>Mais informações</button>
+            </div>
         </div>
+
     </div>
 
     <!--  ===== MODAL INFO SERIE ===== --> 
 
     <section id="info-serie">
-        <img src="images/wallpaper-description-netflix-1000.jpg" alt="wallpaper-description-netflix-500">
-        <h2 id="title-serie">STRANGER THINGS</h2>
-        <button><i class="fas fa-play fa-sm"></i><a href="">Assistir</a></button>
+        <div id="control-top-description">
+            <img class="bg-description-image" src="images/wallpaper-description-netflix-1000.jpg" alt="wallpaper-description-netflix-500">
+            
+            <button id="exit-description"><i class="fas fa-times-circle fa-lg"></i></button>
 
-        <div class="relevante-indicativa">
-            <p class="green">99% relevante</p>
-            <p>2019</p>
-            <span class="indicativa">16</span>
-            <p>3 temporadas</p>
-            <span class="hd">HD</span>
+            <div class="logo-btn">
+                <img class="logo-st description-logo" src="./images/strager-things-netflix-logo.png" alt="description logo">
+                <button class="watch"><i class="fas fa-play fa-sm"></i><a href="">Assistir</a></button>
+            </div>
         </div>
-        <section id="sobre-elenco">
-            <div>
-                <h4 class="info info-700">Agora é oficial: a temporada 4 de Stranger Things estreia em 2022</h4>
-                <p class="info">Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina.</p>
+
+        <section id="info-cast">
+            <div class="relevante-indicativa">
+                <div class="relevant-ind-hd">
+                    <p class="green">99% relevante</p>
+                    <p>2019</p>
+                    <span class="class-indicated">16</span>
+                    <p>3 temporadas</p>
+                    <span class="hd">HD</span>
+                </div>
+                <div>
+                    <h4 class="info info-700">Agora é oficial: a temporada 4 de Stranger Things estreia em 2022</h4>
+                    <p class="info">Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina.</p>
+                </div>
             </div>
-            <div id="sobre">
-                <div>
-                    <p class="title">Elenco:</p><p> Winona Ryder, David Harbour, Finn Wolfhard, <i>mais</i></p>
+            <section id="sobre-elenco">
+                <div id="sobre">
+                    <div>
+                        <p class="title">Elenco:</p><p> Winona Ryder, David Harbour, Finn Wolfhard, <i>mais</i></p>
+                    </div>
+                    <div>
+                        <p class="title">Gêneros:</p><p> Série de ficção científica, Séries teen, Séries de terror</p>
+                    </div>
+                    <div>
+                        <p class="title">Cenas e momentos:</p><p> Sinistros, Assustadores, Empolgantes</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="title">Gêneros:</p><p> Série de ficção científica, Séries teen, Séries de terror</p>
-                </div>
-                <div>
-                    <p class="title">Cenas e momentos:</p><p> Sinistros, Assustadores, Empolgantes</p>
-                </div>
-            </div>
+            </section>
         </section>
     </section>
     

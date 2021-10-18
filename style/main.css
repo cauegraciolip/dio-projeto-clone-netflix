@@ -1,19 +1,50 @@
 @font-face {
-  font-family: Netflix;
-  src: url(./fonts/GothamLight.ttf);
-  src: url(./fonts/Gotham-Light.otf);
-  font-weight: 400;
+  font-family: 'Netflix Sans Regular';
   font-style: normal;
+  font-weight: normal;
+  src: local("Netflix Sans Regular"), url("./fonts/NetflixSansRegular.woff") format("woff");
 }
 
 @font-face {
-  font-family: NetflixMedium;
-  src: url(./fonts/GothamMedium.ttf);
+  font-family: 'Netflix Sans Icon';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Netflix Sans Icon"), url("./fonts/NetflixSansIcon.woff") format("woff");
 }
 
 @font-face {
-  font-family: Benguiant;
-  src: url(./fonts/benguib.ttf);
+  font-family: 'Netflix Sans Thin';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Netflix Sans Thin"), url("./fonts/NetflixSansThin.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Netflix Sans Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Netflix Sans Light"), url("./fonts/NetflixSansLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Netflix Sans Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Netflix Sans Medium"), url("./fonts/NetflixSansMedium.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Netflix Sans Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Netflix Sans Bold"), url("./fonts/NetflixSansBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Netflix Sans Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Netflix Sans Black"), url("./fonts/NetflixSansBlack.woff") format("woff");
 }
 
 * {
@@ -24,7 +55,7 @@
   list-style: none;
   font-weight: 400;
   font-size: 20px;
-  font-family: Netflix, sans-serif;
+  font-family: 'Netflix Sans Regular';
   text-decoration: none;
 }
 
@@ -36,19 +67,7 @@ body {
 /* ====== TOP PAGE, LOGO, LINKS, CONFIGS AND PROFILES ====== */
 #header {
   width: 95%;
-  position: fixed;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin: auto;
 }
 
 #logo-menu {
@@ -58,6 +77,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  padding: 0.5rem;
 }
 
 #logo-menu a {
@@ -103,6 +124,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  right: 0;
+  padding: 1rem;
 }
 
 #header-aside #pesquisa, #header-aside #kids, #header-aside #notifications, #header-aside #nav {
@@ -228,7 +252,7 @@ body {
   z-index: -1;
 }
 
-#bg-header img {
+#bg-header .bg-image {
   position: absolute;
   width: 98.8vw;
   height: 115vh;
@@ -238,22 +262,42 @@ body {
           mask-image: linear-gradient(to top, transparent 3%, black 100%);
 }
 
-#bg-header h2 {
-  font-family: Benguiant;
-  font-size: 3rem;
-  position: relative;
-  top: 45vh;
-  padding-left: 2rem;
-  color: #e2e2e2;
+#bg-header .logo-series-principal {
+  width: 20%;
 }
 
-#bg-header #button-info {
+.name-info-btn {
+  position: relative;
+  top: 60vh;
+}
+
+.logo-st {
+  width: 500px;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+#button-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-#bg-header #button-info button {
+.description {
+  max-width: 650px;
+  color: #e2e2e2;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+}
+
+.watch {
+  background-color: #e2e2e2;
+  margin-left: 2rem;
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.85rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,176 +307,204 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  top: 50vh;
-  font-size: 0.85rem;
-  font-family: NetflixMedium;
+  font-family: 'Netflix Sans Medium';
+  background-color: #e2e2e2;
   -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
 }
 
-#bg-header #button-info button:first-child {
-  background-color: #e2e2e2;
-  margin-left: 2rem;
-  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
-  border: none;
-  border-radius: 5px;
-  font-weight: 500;
-}
-
-#bg-header #button-info button:first-child:hover {
+.watch:hover {
   cursor: pointer;
 }
 
-#bg-header #button-info button:first-child i {
+.watch i {
   padding: 0rem 0.7rem;
 }
 
-#bg-header #button-info button:first-child a {
+.watch a {
   text-decoration: none;
   color: #181818;
   font-size: 0.85rem;
-  font-family: NetflixMedium;
+  font-family: 'Netflix Sans Medium';
 }
 
-#bg-header #button-info button:first-child:hover {
-  background-color: #c9c9c9;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
+.watch:hover {
+  background-color: #d0d0d0;
 }
 
-#bg-header #button-info button:last-child {
+#more-information {
   background-color: #e2e2e2;
   margin-left: 2rem;
   padding: 0.5rem 1.5rem 0.5rem 0.5rem;
   border: none;
   border-radius: 5px;
   font-weight: 500;
+  font-size: 0.85rem;
   margin-left: 1rem;
   background-color: rgba(94, 94, 92, 0.55);
   color: #e2e2e2;
+  font-family: 'Netflix Sans Light';
+  letter-spacing: 1px;
 }
 
-#bg-header #button-info button:last-child:hover {
+#more-information:hover {
   cursor: pointer;
 }
 
-#bg-header #button-info button:last-child i {
+#more-information i {
   padding: 0rem 0.7rem;
 }
 
-#bg-header #button-info button:last-child:hover {
+#more-information:hover {
   background-color: rgba(68, 68, 67, 0.55);
   -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
 }
 
-.description {
-  max-width: 650px;
-  color: #e2e2e2;
-  position: relative;
-  top: 46vh;
-  font-size: 1rem;
-  padding: 0.5rem 2rem;
-}
-
 /* ===== MODAL INFO SERIE ===== */
 #info-serie {
-  display: block;
-  width: 700px;
+  display: none;
+}
+
+#info-serie.description-display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 900px;
   background-color: #181818;
   margin: auto;
   position: relative;
   top: 1rem;
   border-radius: 5px;
   z-index: 3;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-#info-serie h2 {
-  font-family: Benguiant;
-  font-size: 2rem;
-  position: absolute;
-  top: 30vh;
-  padding-left: 1rem;
-  color: #e2e2e2;
-}
-
-#info-serie button {
+#info-serie.description-display .watch {
   background-color: #e2e2e2;
   margin-left: 2rem;
   padding: 0.5rem 1.5rem 0.5rem 0.5rem;
   border: none;
   border-radius: 5px;
   font-weight: 500;
-  position: absolute;
-  top: 36vh;
-  left: -1.5vw;
+  font-size: 0.85rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Netflix Sans Medium';
+  background-color: #e2e2e2;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
   padding: 0.45rem 1.5rem 0.5rem 0.7rem;
 }
 
-#info-serie button:hover {
+#info-serie.description-display .watch:hover {
   cursor: pointer;
 }
 
-#info-serie button i {
+#info-serie.description-display .watch i {
   padding: 0rem 0.7rem;
 }
 
-#info-serie button a {
+#info-serie.description-display .watch a {
   text-decoration: none;
   color: #181818;
   font-size: 0.85rem;
-  font-family: NetflixMedium;
+  font-family: 'Netflix Sans Medium';
 }
 
-#info-serie .info {
-  background-color: #181818;
-  color: #e2e2e2;
-  font-size: 0.8rem;
-  border-radius: 5px;
-  padding-left: 1rem;
-  padding-bottom: 0.8rem;
+#info-serie.description-display .watch:hover {
+  background-color: #d0d0d0;
 }
 
-#info-serie .info-700 {
-  font-family: NetflixMedium;
-}
-
-#info-serie img {
+.bg-description-image {
   -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(3%, transparent), to(black));
   -webkit-mask-image: linear-gradient(to top, transparent 3%, black 100%);
           mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(3%, transparent), to(black));
           mask-image: linear-gradient(to top, transparent 3%, black 100%);
   width: 100%;
+  position: relative;
   border-radius: 5px;
 }
 
-.relevante-indicativa {
+#exit-description {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 3%;
+  top: 3%;
+  color: #e2e2e2;
+}
+
+#exit-description:hover {
+  cursor: pointer;
+}
+
+#info-cast {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+}
+
+.logo-btn {
+  position: absolute;
+  top: 33%;
+  max-width: 20%;
+}
+
+.relevante-indicativa {
+  padding-left: 1.5rem;
+  max-width: 60%;
+}
+
+.relevant-ind-hd {
+  color: #e2e2e2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #e2e2e2;
-  padding-left: 1rem;
+  padding-bottom: 1rem;
 }
 
-.relevante-indicativa p {
+.relevant-ind-hd p {
   font-size: 0.8rem;
   padding-right: 0.8rem;
 }
 
-.relevante-indicativa span {
+.relevant-ind-hd span {
   margin-right: 0.8rem;
 }
 
-.indicativa {
+.info {
+  background-color: #181818;
+  color: #e2e2e2;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  padding-bottom: 0.8rem;
+}
+
+.info-700 {
+  font-family: 'Netflix Sans Medium', sans-serif;
+}
+
+.class-indicated {
   color: #e2e2e2;
   background-color: #e50914;
   padding: 0.3rem 0.3rem;
@@ -451,11 +523,10 @@ body {
 
 .green {
   color: #3FB75D;
-  font-family: NetflixMedium;
+  font-family: 'Netflix Sans Medium';
 }
 
 #sobre-elenco {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -465,7 +536,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 1.4rem;
+  padding: 0.5rem 1rem;
   padding-bottom: 1rem;
 }
 

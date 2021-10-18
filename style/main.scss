@@ -7,21 +7,58 @@ $text-color: #e2e2e2;
 $white: #ffffff;
 
 @font-face {
-    font-family: Netflix;
-    src: url(./fonts/GothamLight.ttf);
-    src: url(./fonts/Gotham-Light.otf);
-    font-weight: 400;
+    font-family: 'Netflix Sans Regular';
     font-style: normal;
+    font-weight: normal;
+    src: local('Netflix Sans Regular'), url('./fonts/NetflixSansRegular.woff') format('woff');
+    }
+    
+  
+@font-face {
+font-family: 'Netflix Sans Icon';
+font-style: normal;
+font-weight: normal;
+src: local('Netflix Sans Icon'), url('./fonts/NetflixSansIcon.woff') format('woff');
 }
 
-@font-face {
-    font-family: NetflixMedium;
-    src: url(./fonts/GothamMedium.ttf);
-}
 
 @font-face {
-    font-family: Benguiant;
-    src: url(./fonts/benguib.ttf);
+font-family: 'Netflix Sans Thin';
+font-style: normal;
+font-weight: normal;
+src: local('Netflix Sans Thin'), url('./fonts/NetflixSansThin.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Netflix Sans Light';
+font-style: normal;
+font-weight: normal;
+src: local('Netflix Sans Light'), url('./fonts/NetflixSansLight.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Netflix Sans Medium';
+font-style: normal;
+font-weight: normal;
+src: local('Netflix Sans Medium'), url('./fonts/NetflixSansMedium.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Netflix Sans Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Netflix Sans Bold'), url('./fonts/NetflixSansBold.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Netflix Sans Black';
+font-style: normal;
+font-weight: normal;
+src: local('Netflix Sans Black'), url('./fonts/NetflixSansBlack.woff') format('woff');
 }
 
 * {
@@ -31,7 +68,7 @@ $white: #ffffff;
     list-style: none;
     font-weight: 400;
     font-size: 20px;
-    font-family: Netflix, sans-serif;
+    font-family: 'Netflix Sans Regular';
     text-decoration: none;
 }
 
@@ -59,6 +96,7 @@ body {
     border: none;
     border-radius: 5px;
     font-weight: 500;
+    font-size: 0.85rem;
 
     &:hover {
         cursor: pointer;
@@ -69,21 +107,67 @@ body {
         }
 }
 
+@mixin watch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Netflix Sans Medium';
+
+    background-color: $text-color;
+    
+    transition: background-color 0.2s ease-in-out;
+
+    a {
+        text-decoration: none;
+        color: $bg-color;
+        font-size: 0.85rem;
+        font-family: 'Netflix Sans Medium';
+    }
+
+    &:hover {
+        background-color: darken($text-color, 7);
+    }
+}
+
+@mixin profile {
+    opacity: 1;
+    position: absolute;
+
+    top: 2rem;
+    right: 0.85rem;
+
+    padding: 0.6rem;
+    padding-right: 2rem;
+    margin-top: 0.5rem;
+    border: 1px solid lighten($text-color, 10);
+
+    transition: all 0.3s ease;
+    
+    .perfis, .config-lista {
+        font-size: 0.7rem;
+        color: $text-color;
+        transition: color 0.3s ease;
+        padding: 0.5rem 0rem;
+    }
+
+    .perfis:hover, .config-lista:hover {
+        cursor: pointer;
+        color: darken($text-color, 50);
+    }
+}
+
 /* ====== TOP PAGE, LOGO, LINKS, CONFIGS AND PROFILES ====== */
 
 #header {
     width: 95%;
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    
-    @include flex;
-    justify-content: space-between;
+    margin: auto;
 }
 
 #logo-menu {
     @include flex;
+    position: absolute;
+    padding: 0.5rem;
 
     a {
         padding: 0.3rem;
@@ -113,6 +197,9 @@ body {
 
 #header-aside {
     @include flex;
+    position: absolute;
+    right: 0;
+    padding: 1rem;
 
     #pesquisa, #kids, #notifications, #nav {
         @include space();
@@ -154,33 +241,6 @@ body {
     opacity: 0;
     position: absolute;
     background-color: $bg-menu-aside;
-}
-
-@mixin profile {
-    opacity: 1;
-    position: absolute;
-
-    top: 2rem;
-    right: 0.85rem;
-
-    padding: 0.6rem;
-    padding-right: 2rem;
-    margin-top: 0.5rem;
-    border: 1px solid lighten($text-color, 10);
-
-    transition: all 0.3s ease;
-    
-    .perfis, .config-lista {
-        font-size: 0.7rem;
-        color: $text-color;
-        transition: color 0.3s ease;
-        padding: 0.5rem 0rem;
-    }
-
-    .perfis:hover, .config-lista:hover {
-        cursor: pointer;
-        color: darken($text-color, 50);
-    }
 }
 
 #nav.activeMenu {
@@ -234,70 +294,32 @@ body {
     position: absolute;
     z-index: -1;
 
-        img {
+        .bg-image {
             position: absolute;
             width: 98.8vw;
             height: 115vh;
             mask-image: linear-gradient(to top, transparent 3%, black 100%);
         }
 
-        h2 {
-            font-family: Benguiant;
-            font-size: 3rem;
-            position: relative;
-            top: 45vh;
-            padding-left: 2rem;
-            color: $text-color;
+        .logo-series-principal {
+            width: 20%;
         }
-
-        #button-info {
-            display: flex;
-
-            button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                position: relative;
-                top: 50vh;
-    
-                font-size: 0.85rem;
-                font-family: NetflixMedium;
-                
-                transition: background-color 0.2s ease-in-out;
-    
-                &:first-child {
-                    @include config-button();
-                    a {
-                        text-decoration: none;
-                        color: $bg-color;
-                        font-size: 0.85rem;
-                        font-family: NetflixMedium;
-                    }
-                    &:hover {
-                        background-color: darken($text-color, 10);
-                        transition: background-color 0.2s ease-in-out;
-                     }
-
-                }
-    
-                &:last-child {
-                    @include config-button();
-                    margin-left: 1rem;
-                    background-color: $gray-button;
-                    color: $text-color;
-                     &:hover {
-                        background-color: darken($gray-button, 10);
-                        transition: background-color 0.2s ease-in-out;
-
-
-                     }
-
-                }
-            }
-        }
-
         
+}
+
+.name-info-btn {
+    position: relative;
+    top: 60vh;
+}
+
+.logo-st {
+    width: 500px;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+#button-info {
+    display: flex;
 }
 
 .description {
@@ -305,19 +327,43 @@ body {
 
     color: $text-color;
 
-    position: relative;
-    top: 46vh;
     font-size: 1rem;
 
     padding: 0.5rem 2rem;
 
 }
 
+.watch {
+    @include config-button();
+    @include watch();
+}
+
+#more-information {
+    @include config-button();
+    margin-left: 1rem;
+    background-color: $gray-button;
+    color: $text-color;
+    font-family: 'Netflix Sans Light';
+    letter-spacing: 1px;
+        &:hover {
+        background-color: darken($gray-button, 10);
+        transition: background-color 0.2s ease-in-out;
+        }
+}
+
+
 /* ===== MODAL INFO SERIE ===== */
 
 #info-serie {
-    display: block;
-    width: 700px;
+    display: none;
+       
+}
+
+#info-serie.description-display {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 900px;
     background-color: $bg-color;
 
     margin: auto;
@@ -328,66 +374,61 @@ body {
     border-radius: 5px;
     z-index: 3;
 
-    h2 {
-        font-family: Benguiant;
-        font-size: 2rem;
-        position: absolute;
-        top: 30vh;
-        padding-left: 1rem;
-        color: $text-color;
-    }
+    transition: all 0.3s ease;
 
-    button {
+    .watch {
         @include config-button();
-
-        position: absolute;
-        top: 36vh;
-        left: -1.5vw;
+        @include watch();
 
         padding: 0.45rem 1.5rem 0.5rem 0.7rem;
-
-        a {
-            text-decoration: none;
-            color: $bg-color;
-            font-size: 0.85rem;
-            font-family: NetflixMedium;
-        }
     }
+}
 
-    .info {
-        background-color: $bg-color;
-        color: $text-color;
+.bg-description-image {
+    mask-image: linear-gradient(to top, transparent 3%, black 100%);
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+}
 
-        font-size: 0.8rem;
+#exit-description {
+    background: none;
+    border: none;
+   
+    position: absolute;
 
-        border-radius: 5px;
+    right: 3%;
+    top: 3%;
 
-        padding-left: 1rem;
-        padding-bottom: 0.8rem;
+    color: $text-color;
 
+    &:hover {
+        cursor: pointer;
     }
+}
 
-    .info-700 {
-        font-family: NetflixMedium;
-    }
+#info-cast {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-    img {
-        mask-image: linear-gradient(to top, transparent 3%, black 100%);
-        width: 100%;
+.logo-btn {
+    position: absolute;
+    top: 33%;
 
-        border-radius: 5px;
-
-    }
-    
+    max-width: 20%;
 }
 
 .relevante-indicativa {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+    padding-left: 1.5rem;
+    max-width: 60%;
+}
+
+.relevant-ind-hd {
     color: $text-color;
-    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
 
     p {
         font-size: 0.8rem;
@@ -398,9 +439,25 @@ body {
     span {
         margin-right: 0.8rem;
     }
+
 }
 
-.indicativa {
+.info {
+    background-color: $bg-color;
+    color: $text-color;
+
+    font-size: 0.8rem;
+
+    border-radius: 5px;
+    padding-bottom: 0.8rem;
+
+}
+
+.info-700 {
+    font-family: 'Netflix Sans Medium', sans-serif;
+}
+
+.class-indicated {
     color: $text-color;
     background-color: $patter-red;
     padding: 0.3rem 0.3rem;
@@ -418,19 +475,20 @@ body {
 
     padding: 0.1rem 0.25rem;
 }
+
 .green {
     color: #3FB75D;
-    font-family: NetflixMedium;
+    font-family: 'Netflix Sans Medium';
 }
 
 #sobre-elenco {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding-top: 1.4rem;
+    padding: 0.5rem 1rem;
     padding-bottom: 1rem;
+
 }
 
 #sobre {
