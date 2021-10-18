@@ -200,6 +200,7 @@ body {
     position: absolute;
     right: 0;
     padding: 1rem;
+    padding-right: 2rem;
 
     #pesquisa, #kids, #notifications, #nav {
         @include space();

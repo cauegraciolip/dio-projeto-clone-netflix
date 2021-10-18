@@ -127,6 +127,7 @@ body {
   position: absolute;
   right: 0;
   padding: 1rem;
+  padding-right: 2rem;
 }
 
 #header-aside #pesquisa, #header-aside #kids, #header-aside #notifications, #header-aside #nav {
