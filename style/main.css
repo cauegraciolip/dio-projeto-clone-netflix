@@ -66,11 +66,13 @@ body {
 /* ===== MIXINS ===== */
 /* ====== TOP PAGE, LOGO, LINKS, CONFIGS AND PROFILES ====== */
 #header {
+  display: block;
   width: 95%;
   margin: auto;
 }
 
 #logo-menu {
+  display: block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -588,5 +590,21 @@ body {
 
 #sobre div .title {
   color: rgba(94, 94, 92, 0.55);
+}
+
+/* ===== SECTIO LIST MOVIES AND SERIES CARROUSEL ===== */
+#list-movies-series {
+  position: absolute;
+  top: 100vh;
+}
+
+.more-views {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.first-line-movies {
+  padding: 0rem 0.5rem;
 }
 /*# sourceMappingURL=main.css.map */

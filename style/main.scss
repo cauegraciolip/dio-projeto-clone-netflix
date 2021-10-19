@@ -148,11 +148,13 @@ body {
 /* ====== TOP PAGE, LOGO, LINKS, CONFIGS AND PROFILES ====== */
 
 #header {
+    display: block;
     width: 95%;
     margin: auto;
 }
 
 #logo-menu {
+    display: block;
     @include flex;
     position: absolute;
     padding: 0.5rem;
@@ -538,3 +540,17 @@ body {
    }
 }
 
+/* ===== SECTIO LIST MOVIES AND SERIES CARROUSEL ===== */
+
+#list-movies-series {
+    position: absolute;
+    top: 100vh;
+}
+
+.more-views {
+    display: flex;
+}
+
+.first-line-movies {
+    padding: 0rem 0.5rem;
+}
