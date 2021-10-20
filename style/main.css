@@ -64,23 +64,54 @@ body {
 }
 
 /* ===== MIXINS ===== */
+/* ===== BACKGROUND SITE ===== */
+.bg-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(3%, transparent), to(black));
+  -webkit-mask-image: linear-gradient(to top, transparent 3%, black 100%);
+          mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(3%, transparent), to(black));
+          mask-image: linear-gradient(to top, transparent 3%, black 100%);
+}
+
 /* ====== TOP PAGE, LOGO, LINKS, CONFIGS AND PROFILES ====== */
 #header {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 85vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#control-header-logo-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 95%;
-  margin: auto;
+  margin: 0 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.6rem;
 }
 
 #logo-menu {
-  display: block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
-  padding: 0.5rem;
+  padding-right: 1rem;
+  grid-area: logo;
 }
 
 #logo-menu a {
@@ -97,25 +128,18 @@ body {
   padding-bottom: 0.3rem;
 }
 
-.lista-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0rem 0.2rem;
-  padding-right: 0.7rem;
+#menu-ul li {
+  padding-left: 1rem;
 }
 
-.lista-menu a {
+#menu-ul li a {
   font-size: 0.7rem;
   color: #e2e2e2;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
-.lista-menu a:hover {
+#menu-ul li a:hover {
   color: white;
 }
 
@@ -126,37 +150,27 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
-  right: 0;
-  padding: 1rem;
-  padding-right: 2rem;
 }
 
-#header-aside #pesquisa, #header-aside #kids, #header-aside #notifications, #header-aside #nav {
-  padding: 0rem 0.2rem;
-  padding-right: 0.7rem;
+#header-aside a, #header-aside div, #header-aside button {
+  padding-left: 1.5rem;
 }
 
-#header-aside #pesquisa input, #header-aside #kids input, #header-aside #notifications input, #header-aside #nav input {
-  color: #e2e2e2;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-#header-aside #pesquisa .icon, #header-aside #kids .icon, #header-aside #notifications .icon, #header-aside #nav .icon {
-  -webkit-filter: invert(99%) sepia(0%) saturate(3498%) hue-rotate(166deg) brightness(113%) contrast(77%);
-          filter: invert(99%) sepia(0%) saturate(3498%) hue-rotate(166deg) brightness(113%) contrast(77%);
-  background: none;
-}
-
-#header-aside #kids {
+#header-aside a {
   font-size: 0.7rem;
   color: #e2e2e2;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
-#header-aside #kids:hover {
+#header-aside a:hover {
   color: white;
+}
+
+#header-aside button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 #pesquisa {
@@ -166,19 +180,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-#btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: relative;
-}
-
-#pesquisa {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  padding-left: 1rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
@@ -188,6 +190,8 @@ body {
 }
 
 #pesquisa input {
+  color: #e2e2e2;
+  background-color: rgba(0, 0, 0, 0.6);
   opacity: 0;
 }
 
@@ -217,6 +221,12 @@ body {
   transition: all 0.3s ease;
 }
 
+.icon {
+  -webkit-filter: invert(99%) sepia(0%) saturate(3498%) hue-rotate(166deg) brightness(113%) contrast(77%);
+          filter: invert(99%) sepia(0%) saturate(3498%) hue-rotate(166deg) brightness(113%) contrast(77%);
+  background: none;
+}
+
 #nav-menu {
   opacity: 0;
   position: absolute;
@@ -227,7 +237,7 @@ body {
   opacity: 1;
   position: absolute;
   top: 3rem;
-  right: 10%;
+  right: 3%;
   padding: 0.6rem;
   padding-right: 2rem;
   margin-top: 0.5rem;
@@ -236,39 +246,37 @@ body {
   transition: all 0.3s ease;
 }
 
-.profile {
+#perfis li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 0.3rem;
 }
 
-.profile img {
+#perfis li img {
   -webkit-filter: none;
           filter: none;
   border-radius: 3px;
 }
 
-.profile p {
+#perfis li p {
   font-size: 0.7rem;
   color: #e2e2e2;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
   padding: 0.5rem 0.5rem;
+  padding-right: 0;
 }
 
-.profile p:hover {
+#perfis li p:hover {
   cursor: pointer;
   color: #636363;
 }
 
-.manage-kids p {
-  padding-left: 0;
-}
-
-.config-lista {
+#config-conta li {
   font-size: 0.7rem;
   color: #e2e2e2;
   -webkit-transition: color 0.3s ease;
@@ -276,36 +284,12 @@ body {
   padding: 0.5rem 0rem;
 }
 
-.config-lista:hover {
+#config-conta li:hover {
   cursor: pointer;
   color: #636363;
 }
 
 /* ===== BACKGROUND, TITLE AND BUTTONS ===== */
-#bg-header {
-  position: absolute;
-  z-index: -1;
-}
-
-#bg-header .bg-image {
-  position: absolute;
-  width: 98.8vw;
-  height: 115vh;
-  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(3%, transparent), to(black));
-  -webkit-mask-image: linear-gradient(to top, transparent 3%, black 100%);
-          mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(3%, transparent), to(black));
-          mask-image: linear-gradient(to top, transparent 3%, black 100%);
-}
-
-#bg-header .logo-series-principal {
-  width: 20%;
-}
-
-.name-info-btn {
-  position: relative;
-  top: 60vh;
-}
-
 .logo-st {
   width: 500px;
   padding-left: 2rem;
@@ -316,13 +300,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.description {
-  max-width: 650px;
-  color: #e2e2e2;
-  font-size: 1rem;
-  padding: 0.5rem 2rem;
 }
 
 .watch {
@@ -593,18 +570,4 @@ body {
 }
 
 /* ===== SECTIO LIST MOVIES AND SERIES CARROUSEL ===== */
-#list-movies-series {
-  position: absolute;
-  top: 100vh;
-}
-
-.more-views {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.first-line-movies {
-  padding: 0rem 0.5rem;
-}
 /*# sourceMappingURL=main.css.map */

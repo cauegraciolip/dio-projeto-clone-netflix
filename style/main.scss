@@ -84,8 +84,7 @@ body {
 }
 
 @mixin space {
-    padding: 0rem 0.2rem;
-    padding-right: 0.7rem;
+    padding-left: 1rem;
 }
 
 @mixin config-button {
@@ -135,7 +134,7 @@ body {
     position: absolute;
 
     top: 3rem;
-    right: 10%;
+    right: 3%;
 
     padding: 0.6rem;
     padding-right: 2rem;
@@ -145,19 +144,37 @@ body {
     transition: all 0.3s ease;
 }
 
+/* ===== BACKGROUND SITE ===== */
+
+.bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    mask-image: linear-gradient(to top, transparent 3%, black 100%);
+}
+
 /* ====== TOP PAGE, LOGO, LINKS, CONFIGS AND PROFILES ====== */
 
 #header {
-    display: block;
+    display: flex;
+    height: 85vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#control-header-logo-nav {
+    display: flex;
     width: 95%;
-    margin: auto;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 0.6rem;
 }
 
 #logo-menu {
-    display: block;
     @include flex;
-    position: absolute;
-    padding: 0.5rem;
+    padding-right: 1rem;
+    grid-area: logo;
 
     a {
         padding: 0.3rem;
@@ -167,11 +184,28 @@ body {
 #menu-ul {
     @include flex;
     padding-bottom: 0.3rem;
+
+    li {
+        @include space;
+
+        a {
+            font-size: 0.7rem;
+            color: $text-color;
+            transition: color 0.3s ease;
+    
+            &:hover {
+                color: lighten($text-color, 30);
+            }
+        }
+    }
 }
 
-.lista-menu {
+#header-aside {
     @include flex;
-    @include space;
+
+    a, div, button {
+        padding-left: 1.5rem;
+    }
 
     a {
         font-size: 0.7rem;
@@ -182,59 +216,24 @@ body {
             color: lighten($text-color, 30);
         }
     }
-    
-}
-
-#header-aside {
-    @include flex;
-    position: absolute;
-    right: 0;
-    padding: 1rem;
-    padding-right: 2rem;
-
-    #pesquisa, #kids, #notifications, #nav {
-        @include space();
-
-        input {
-            color: $text-color;
-            background-color: $bg-menu-aside;
-        }
-
-        .icon {
-            filter: invert(99%) sepia(0%) saturate(3498%) hue-rotate(166deg) brightness(113%) contrast(77%);
-            background: none;
-        }
-    }
-
-    #kids {
-        font-size: 0.7rem;
-        color: $text-color;
-        transition: color 0.3s ease;
-
-        &:hover {
-            color: lighten($text-color, 30);
-        }
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 }
 
 #pesquisa {
     @include flex;
-}
-
-#btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
-}
-
-#pesquisa {
-    display: flex;
+    @include space();
     flex-direction: row-reverse;
     transition: all 0.3s ease;
 
     input {
+        color: $text-color;
+        background-color: $bg-menu-aside;
         opacity: 0;
+
     }
 }
 
@@ -264,6 +263,10 @@ body {
         transition: all 0.3s ease;
     }
 }
+.icon {
+    filter: invert(99%) sepia(0%) saturate(3498%) hue-rotate(166deg) brightness(113%) contrast(77%);
+    background: none;
+}
 
 #nav-menu {
     opacity: 0;
@@ -277,70 +280,47 @@ body {
     }
 }
 
-.profile {
-    display: flex;
-    align-items: center;
-    
+#perfis {
+    li {
+        display: flex;
+        align-items: center;
+        padding-bottom: 0.3rem;
 
-    img {
-        filter: none;
-        border-radius: 3px;
+        img {
+            filter: none;
+            border-radius: 3px;
+        }
+
+        p {
+            font-size: 0.7rem;
+            color: $text-color;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0.5rem;
+            padding-right: 0;
+
+         &:hover {
+            cursor: pointer;
+            color: darken($text-color, 50);
+            }
+        }
     }
+}
 
-    p {
+#config-conta {
+    li {
         font-size: 0.7rem;
         color: $text-color;
         transition: color 0.3s ease;
-        padding: 0.5rem 0.5rem;
-     &:hover {
-        cursor: pointer;
-        color: darken($text-color, 50);
+        padding: 0.5rem 0rem;
+
+        &:hover {
+            cursor: pointer;
+            color: darken($text-color, 50);
         }
     }
 }
-
-.manage-kids {
-    p {
-        padding-left: 0;
-    }
-}
-
-.config-lista {
-    font-size: 0.7rem;
-    color: $text-color;
-    transition: color 0.3s ease;
-    padding: 0.5rem 0rem;
-}
-
-.config-lista:hover {
-    cursor: pointer;
-    color: darken($text-color, 50);
-}   
-
 
 /* ===== BACKGROUND, TITLE AND BUTTONS ===== */
-
-#bg-header {
-    position: absolute;
-    z-index: -1;
-
-        .bg-image {
-            position: absolute;
-            width: 98.8vw;
-            height: 115vh;
-            mask-image: linear-gradient(to top, transparent 3%, black 100%);
-        }
-
-        .logo-series-principal {
-            width: 20%;
-        }
-        
-}
-
-.name-info-btn {
-    position: relative;
-    top: 60vh;
-}
 
 .logo-st {
     width: 500px;
@@ -350,17 +330,6 @@ body {
 
 #button-info {
     display: flex;
-}
-
-.description {
-    max-width: 650px;
-
-    color: $text-color;
-
-    font-size: 1rem;
-
-    padding: 0.5rem 2rem;
-
 }
 
 .watch {
@@ -541,16 +510,3 @@ body {
 }
 
 /* ===== SECTIO LIST MOVIES AND SERIES CARROUSEL ===== */
-
-#list-movies-series {
-    position: absolute;
-    top: 100vh;
-}
-
-.more-views {
-    display: flex;
-}
-
-.first-line-movies {
-    padding: 0rem 0.5rem;
-}

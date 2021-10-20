@@ -14,53 +14,56 @@
 </head>
 <body id="body">
 
+    <img src="images/wallpaper-home-netflix.jpg" alt="bg-image" class="bg-image">
+
+
     <header id="header">
-        <div id="logo-menu">
-            <a><img src="https://fontmeme.com/permalink/211008/3d09959a0f1152860ce94decf68c586f.png" alt="netflix-font"></a>
-            <ul id="menu-ul">
-                <li class="lista-menu"><a href="/">Início</a></li>
-                <li class="lista-menu"><a href="/">Séries</a></li>
-                <li class="lista-menu"><a href="/">Filmes</a></li>
-                <li class="lista-menu"><a href="/">Bombando</a></li>
-                <li class="lista-menu"><a href="/">Minha lista</a></li>
-            </ul>
-        </div>
-        <div id="header-aside">
-            <div id="pesquisa">
-                <img width="20px" src="./images/search-solid.svg" alt="pesquisar" id="lupa" class="icon">
 
-                <input type="search" name="busca" id="input-busca" placeholder="Títulos,gente e genêros">
+        <!-- ===== LOGO AND MENU ===== -->
+
+        <section id="control-header-logo-nav">
+            <div id="logo-menu">
+                <a><img src="https://fontmeme.com/permalink/211008/3d09959a0f1152860ce94decf68c586f.png" alt="netflix-font"></a>
+                <ul id="menu-ul">
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/">Séries</a></li>
+                    <li><a href="/">Filmes</a></li>
+                    <li><a href="/">Bombando</a></li>
+                    <li><a href="/">Minha lista</a></li>
+                </ul>
             </div>
-            
-            <a id="kids" href="/">Infantil</a>
-
-            <div id="notifications"><img width="20px" src="./images/bell-solid.svg" alt="notification" class="icon"></div>
-
-            <nav id="nav" onclick="showMenu()">
-                <button id="btn"><img width="30px" src="./images/square-solid.svg" alt="menu" class="icon"></button>
-                <div id="nav-menu">
-                    <ul id="perfis">
-                        <li class="profile"><img src="./images/profile-picture-one.png" alt="profile-one"><p>Perfil 1</p></li>
-                        <li class="profile"><img src="./images/profile-picture-photo.png" alt="profile-four"> <p>Perfil 2</p></li>
-                        <li class="profile"><img src="./images/profile-picture-two.png" alt=""> <p>Perfil 3</p></li>
-                        <li class="manage-kids profile"><p class="config-profiles-p">Infantil</p></li>
-                        <li class="manage-kids profile"><p class="config-profiles-p">Gerenciar perfis</p></li>
-                    </ul>
-                    <hr>
-                    <ul id="config-conta">
-                        <li class="config-lista">Conta</li>
-                        <li class="config-lista">Centro de ajuda</li>
-                        <li class="config-lista">Sair da Netflix</li>
-                    </ul>
+            <!-- ===== SEARCH, KIDS, NOTIFICATIONS AND PROFILE ICONS ===== -->
+            <div id="header-aside">
+                <div id="pesquisa">
+                    <img width="20px" src="./images/search-solid.svg" alt="pesquisar" id="lupa" class="icon">
+                    <input type="search" name="busca" id="input-busca" placeholder="Títulos,gente e genêros">
                 </div>
-            </nav>
-        </div>
-    </header>
+            
+                <a href="/">Infantil</a>
+                <div><img width="20px" src="./images/bell-solid.svg" alt="notification" class="icon"></div>
+                <nav id="nav" onclick="showMenu()">
+                    <button><img width="30px" src="./images/square-solid.svg" alt="menu" class="icon"></button>
+                    <div id="nav-menu">
+                        <ul id="perfis">
+                            <li><img src="./images/profile-picture-one.png" alt="profile-one"><p>Perfil 1</p></li>
+                            <li><img src="./images/profile-picture-photo.png" alt="profile-four"><p>Perfil 2</p></li>
+                            <li><img src="./images/profile-picture-two.png" alt=""><p>Perfil 3</p></li>
+                            <li><p class="profile">Infantil</p></li>
+                            <li><p class="profile">Gerenciar perfis</p></li>
+                        </ul>
+                        <hr>
+                        <ul id="config-conta">
+                            <li>Conta</li>
+                            <li>Centro de ajuda</li>
+                            <li>Sair da Netflix</li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <!-- ===== LOGO ST, WATCH AND DESCRIPTION BUTTON ===== -->
 
-    <div id="bg-header">
-        <img src="images/wallpaper-home-netflix.jpg" alt="bg-image" class="bg-image">
-
-        <div class="name-info-btn">
+        <div id="name-info-btn">
             <img class="logo-st" src="./images/strager-things-netflix-logo.png" alt="st-principal-logo" class="logo-series-principal">
 
             <div id="button-info">
@@ -68,12 +71,16 @@
                 <button id="more-information"><i class="fas fa-info-circle"></i>Mais informações</button>
             </div>
         </div>
+    </header>
 
-    </div>
+    
 
     <!--  ===== MODAL INFO SERIE ===== --> 
 
     <section id="info-serie">
+
+        <!-- ===== BG IMAGE, EXIT BUTTON AND WATCH BUTTON ===== -->
+
         <div id="control-top-description">
             <img class="bg-description-image" src="images/wallpaper-description-netflix-1000.jpg" alt="wallpaper-description-netflix-500">
             
@@ -84,6 +91,8 @@
                 <button class="watch"><i class="fas fa-play fa-sm"></i><a href="">Assistir</a></button>
             </div>
         </div>
+
+        <!-- ===== LEFT SIDE OF DESCRIPTION ===== -->
 
         <section id="info-cast">
             <div class="relevante-indicativa">
@@ -99,6 +108,9 @@
                     <p class="info">Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina.</p>
                 </div>
             </div>
+
+            <!-- ===== TIGHT SIDE OF DESCRIPTION ===== -->
+
             <section id="sobre-elenco">
                 <div id="sobre">
                     <div>
@@ -119,20 +131,19 @@
 
     <section id="list-movies-series">
         <section id="carrousel-most-views">
-            <ul class="more-views">
-                <li class="first-line-movies"><img src="./images/banners/alice-in-borderland.jpg" alt=""></li>
-                <li class="first-line-movies"><img src="./images/banners/anyone-at-home.jpg" alt=""></li>
-                <li class="first-line-movies"><img src="./images/banners/batalha-esquecida.jpg" alt=""></li>
-                <li class="first-line-movies"><img src="./images/banners/bnn-.jpg" alt=""></li>
-                <li class="first-line-movies"><img src="./images/banners/breaking-bad.jpg" alt=""></li>
-                <li class="first-line-movies"><img src="./images/banners/clube-luta.jpg" alt=""></li>
-                <li class="first-line-movies"><img src="./images/banners/culpado.jpg" alt=""></li>
-                <li class="first-line-movies"><img src="./images/banners/for-life.jpg" alt=""></li>
-                <li class="first-line-movies"><img src="./images/banners/homem-castanha.jpg" alt=""></li>
-                <li class="first-line-movies"><img src="./images/banners/kate.jpg" alt=""></li>
-            </ul>
+            <div class="first-line-movies"><img src="./images/banners/alice-in-borderland.jpg" alt=""></div>
+            <div class="first-line-movies"><img src="./images/banners/anyone-at-home.jpg" alt=""></div>
+            <div class="first-line-movies"><img src="./images/banners/batalha-esquecida.jpg" alt=""></div>
+            <div class="first-line-movies"><img src="./images/banners/bnn-.jpg" alt=""></div>
+            <div class="first-line-movies"><img src="./images/banners/breaking-bad.jpg" alt=""></div>
+            <div class="first-line-movies"><img src="./images/banners/clube-luta.jpg" alt=""></div>
+            <div class="first-line-movies"><img src="./images/banners/culpado.jpg" alt=""></div>
+            <div class="first-line-movies"><img src="./images/banners/for-life.jpg" alt=""></div>
+            <div class="first-line-movies"><img src="./images/banners/homem-castanha.jpg" alt=""></div>
+            <div class="first-line-movies"><img src="./images/banners/kate.jpg" alt=""></div>
         </section>
-    </section>    
+    </section>  
+      
 
 <script src="./app/script.js"></script>
 </body>
