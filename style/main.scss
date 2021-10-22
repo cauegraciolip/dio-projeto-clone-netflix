@@ -322,6 +322,10 @@ body {
 
 /* ===== BACKGROUND, TITLE AND BUTTONS ===== */
 
+#name-info-btn {
+    padding-left: 0.9rem;
+}
+
 .logo-st {
     width: 500px;
     padding-left: 2rem;
@@ -355,7 +359,6 @@ body {
 
 #info-serie {
     display: none;
-       
 }
 
 #info-serie.description-display {
@@ -364,11 +367,11 @@ body {
     flex-wrap: wrap;
     max-width: 900px;
     background-color: $bg-color;
-
-    margin: auto;
     
-    position: relative;
+    position: absolute;
     top: 1rem;
+    left: 17%;
+    
 
     border-radius: 5px;
     z-index: 3;
@@ -510,3 +513,19 @@ body {
 }
 
 /* ===== SECTIO LIST MOVIES AND SERIES CARROUSEL ===== */
+
+#main-content {
+    margin-top: 2.7rem;
+}
+
+.control-carousel {
+    margin-bottom: 1rem;
+}
+
+.most-view-carousel {
+    color: $text-color;
+    padding-left: 2.9rem;
+    padding-bottom: 0.7rem;
+
+    font-family: "Netflix Sans Medium";
+}

@@ -32,3 +32,24 @@ function showDescription() {
 
 exitButton.addEventListener('click', hiddeDescription)
 moreInformationButton.addEventListener('click', showDescription)
+
+/* ===== ROLL CAROUSEL ===== */
+
+$('.owl-carousel').owlCarousel({
+    stagePadding: 20,
+    slideBy: 3,
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})

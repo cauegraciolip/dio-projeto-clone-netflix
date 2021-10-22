@@ -10,6 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+
+    <!-- STYLE OWL -->
+    
+    <link rel="stylesheet" href="./style/owl/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./style/owl/owl.carousel.min.css">
     <title>Netflix</title>
 </head>
 <body id="body">
@@ -128,23 +133,48 @@
     </section>
 
     <!-- ===== SECTION LIST MOVIES AND SERIES CARROUSEL ===== -->
-
-    <section id="list-movies-series">
-        <section id="carrousel-most-views">
-            <div class="first-line-movies"><img src="./images/banners/alice-in-borderland.jpg" alt=""></div>
-            <div class="first-line-movies"><img src="./images/banners/anyone-at-home.jpg" alt=""></div>
-            <div class="first-line-movies"><img src="./images/banners/batalha-esquecida.jpg" alt=""></div>
-            <div class="first-line-movies"><img src="./images/banners/bnn-.jpg" alt=""></div>
-            <div class="first-line-movies"><img src="./images/banners/breaking-bad.jpg" alt=""></div>
-            <div class="first-line-movies"><img src="./images/banners/clube-luta.jpg" alt=""></div>
-            <div class="first-line-movies"><img src="./images/banners/culpado.jpg" alt=""></div>
-            <div class="first-line-movies"><img src="./images/banners/for-life.jpg" alt=""></div>
-            <div class="first-line-movies"><img src="./images/banners/homem-castanha.jpg" alt=""></div>
-            <div class="first-line-movies"><img src="./images/banners/kate.jpg" alt=""></div>
+    <main id="main-content">
+    
+        <section class="control-carousel">
+            <h2 class="most-view-carousel">Em alta</h2>
+            <section class="carousel-items owl-carousel owl-theme">
+                <div class="items"><img src="./images/banners/alice-in-borderland.jpg"  alt=""></div>
+                <div class="items"><img src="./images/banners/you.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/batalha-esquecida.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/bnn-.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/lucifer-jpg.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/anyone-at-home.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/culpado.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/kate.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/for-life.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/homem-castanha.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/myname-banner.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/outerbanks.jpg" alt=""></div>
+            </section>
         </section>
-    </section>  
+    
+        <section class="control-carousel">
+            <h2 class="most-view-carousel">Continuar assitindo como Cauê</h2>
+            <section class="carousel-items owl-carousel owl-theme">
+                <div class="items"><img src="./images/banners/better-call-saul.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/clube-luta.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/breaking-bad.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/michael.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/mindhunter.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/monstro.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/naruto.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/ozark.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/peaky-blinders.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/sell-drugs.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/shrek.jpg" alt=""></div>
+                <div class="items"><img src="./images/banners/suits.jpg" alt=""></div>
+            </section>
+    
+        </section>
+    </main>  
       
-
-<script src="./app/script.js"></script>
+    <script src="./app/owl/jquery.min.js"></script>
+    <script src="./app/owl/owl.carousel.min.js"></script>
+    <script src="./app/script.js"></script>
 </body>
 </html>
