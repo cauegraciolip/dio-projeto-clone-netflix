@@ -174,7 +174,6 @@ body {
 #logo-menu {
     @include flex;
     padding-right: 1rem;
-    grid-area: logo;
 
     a {
         padding: 0.3rem;
@@ -529,3 +528,31 @@ body {
 
     font-family: "Netflix Sans Medium";
 }
+
+.items {
+    cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+
+#footer {
+    width: 100%;
+    background-color: darken($bg-color , 5);
+}
+
+.control-footer {
+    display: flex;
+    width: 50%;
+
+    margin: auto;
+    padding: 10px;
+
+    justify-content: center;
+
+    a, p {
+        font-size: 0.8rem;
+        padding: 5px;
+        color: darken($text-color, 30);
+    }
+}
+

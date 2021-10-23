@@ -111,7 +111,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding-right: 1rem;
-  grid-area: logo;
 }
 
 #logo-menu a {
@@ -587,5 +586,33 @@ body {
   padding-left: 2.9rem;
   padding-bottom: 0.7rem;
   font-family: "Netflix Sans Medium";
+}
+
+.items {
+  cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+#footer {
+  width: 100%;
+  background-color: #0b0b0b;
+}
+
+.control-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.control-footer a, .control-footer p {
+  font-size: 0.8rem;
+  padding: 5px;
+  color: #969696;
 }
 /*# sourceMappingURL=main.css.map */
