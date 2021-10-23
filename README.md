@@ -1,8 +1,8 @@
-# Projeto clone Netflix
+# Projeto Clone Netflix
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
-<img src="../images/screenshot-fullsize.png" alt="screenshot">
+<img src="./images/screenshot-fullsize.png" alt="screenshot">
 
 > Projeto proposto pela equipe da Digital Innovation One. O projeto consiste em criar um clone do site da Netflix, implementando algumas funcionalidades utilizando libs.
 
@@ -46,5 +46,3 @@ Para usar Clone Netflix, clique no link abaixo:
 ## 📝 Licença
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
-
-[⬆ Voltar ao topo](#dio-projeto-clone-netflix)<br>
